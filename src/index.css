@@ -1,0 +1,10 @@
+/* Tailwind v4 */
+@import "tailwindcss";
+
+/* small globals (no @apply) */
+html, body, #root { height: 100%; scroll-behavior: smooth; }
+body {
+  color: rgb(17 24 39); /* gray-900 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

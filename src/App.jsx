@@ -8,11 +8,21 @@ import Services from './components/Services'
 function App() {
   return (
     <>
-    <Navbar></Navbar>
+    {/* <Navbar></Navbar>
     <section> <Home></Home> </section>
-    <section>  <About></About> </section>
     <section> <Services></Services> </section>
-    <section><Footer></Footer> </section>
+    <section>  <About></About> </section>
+    <section><Footer></Footer> </section> */}
+
+
+
+    <Navbar></Navbar>
+    <main>
+      <Home></Home>
+      <Services></Services>
+      <About></About>
+    </main>
+    <Footer></Footer>
 
     </>
   )
