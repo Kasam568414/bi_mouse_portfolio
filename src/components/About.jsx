@@ -54,6 +54,7 @@ export default function About() {
 
   return (
     <>
+    <div id="about">
       <Section id="about" className="bg-white">
         <div className="text-center">
           <div className="mb-2 text-sm font-medium tracking-wider text-gray-600">TESTIMONIAL</div>
@@ -147,6 +148,7 @@ export default function About() {
           </div>
         </div>
       )}
+      </div>
     </>
   );
 }

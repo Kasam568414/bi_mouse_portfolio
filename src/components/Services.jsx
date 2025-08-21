@@ -46,6 +46,7 @@ const Services = () => {
 
   return (
     <>
+    <div id="services">
       {/* Spacer so fixed navbar doesn’t overlap */}
       <div style={{ height: NAVBAR_HEIGHT }} aria-hidden="true" />
 
@@ -185,6 +186,7 @@ const Services = () => {
           </div>
         </div>
       </section>
+      </div>
     </>
   );
 };
@@ -200,6 +202,7 @@ function ValueRow({ icon, title, text }) {
         <p className="text-[13px] leading-tight text-white/90">{text}</p>
       </div>
     </div>
+    
   );
 }
 

@@ -39,6 +39,7 @@ const Home = () => {
 
   return (
     <>
+    <div id="home">
       {/* Spacer so fixed navbar doesn't overlap content */}
       <div style={{ height: NAVBAR_HEIGHT }} aria-hidden="true" />
 
@@ -101,7 +102,7 @@ const Home = () => {
           </svg>
         </div>
 
-        <h1 className="mb-4 text-3xl font-extrabold leading-tight text-[#205065] md:text-5xl lg:text-6xl">
+        <h1 className="mb-4 text-3xl font-extrabold leading-tight text-[#205065] md:text-5xl lg:text-6xl mr-5">
           Innovative Data Visualization Solutions for Your Business
         </h1>
 
@@ -257,6 +258,7 @@ const Home = () => {
         }}
         aria-hidden="true"
       />
+      </div>
     </>
   );
 };

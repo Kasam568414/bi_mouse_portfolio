@@ -8,3 +8,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+:root { --nav-h: 72px; }          /* set your navbar height once */
+html {
+  scroll-behavior: smooth;         /* smooth anchor scrolling */
+  scroll-padding-top: var(--nav-h);/* offset so sections aren’t hidden under the fixed nav */
+}
