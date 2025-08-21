@@ -16,9 +16,12 @@ import cardimg13 from "../assets/Frame 34167 (2).png";
 import cardimg14 from "../assets/Frame 34167 (1).png";
 import banner from "../assets/Rectangle 3666@2x.png";
 
-const CONTAINER = "mx-auto max-w-screen-xl px-4";
+/** MAKE THIS MATCH YOUR NAVBAR EXACTLY */
+const NAV_CONTAINER = "mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8";
+/** If navbar is fixed, keep this equal to its height */
+const NAVBAR_HEIGHT = 72;
+/** Consistent vertical rhythm for all blocks on this page */
 const VSPACE = "py-16 md:py-20";
-const NAVBAR_HEIGHT = 72; // <-- keep this equal to your fixed navbar height
 
 const Services = () => {
   const services = [
@@ -43,12 +46,12 @@ const Services = () => {
 
   return (
     <>
-      {/* Spacer so fixed navbar doesn't overlap this page */}
+      {/* Spacer so fixed navbar doesn’t overlap */}
       <div style={{ height: NAVBAR_HEIGHT }} aria-hidden="true" />
 
-      <section id="services" className="bg-white scroll-mt-[72px]">
-        {/* Services grid */}
-        <div className={`${CONTAINER} ${VSPACE}`}>
+      {/* SERVICES GRID */}
+      <section className="bg-white scroll-mt-[72px]">
+        <div className={`${NAV_CONTAINER} ${VSPACE}`}>
           <h2 className="text-3xl font-bold text-center mb-1">Our Services</h2>
           <p className="text-lg text-center mb-10 text-gray-600">
             The right decision for your marketing strategy
@@ -62,14 +65,8 @@ const Services = () => {
                   svc.highlight ? "border-2 border-blue-400" : ""
                 }`}
               >
-                <img
-                  src={svc.icon}
-                  alt={svc.title}
-                  className="mb-5 w-16 h-16 object-contain"
-                />
-                <h3 className="font-semibold text-2xl text-center mb-2">
-                  {svc.title}
-                </h3>
+                <img src={svc.icon} alt={svc.title} className="mb-5 w-16 h-16 object-contain" />
+                <h3 className="font-semibold text-2xl text-center mb-2">{svc.title}</h3>
                 <p className="text-gray-700 text-center mb-5">{svc.desc}</p>
                 <button className="mt-auto px-4 py-2 bg-[#A5AAFF] text-black rounded hover:bg-purple-500 transition">
                   Learn More
@@ -78,133 +75,105 @@ const Services = () => {
             ))}
           </div>
         </div>
+      </section>
 
-        {/* Agency Overview (full-bleed bg, container-aligned content) */}
-        <div
-          className="w-full"
-          style={{
-            backgroundImage: `url(${banner})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          <div className={`${CONTAINER} ${VSPACE}`}>
-            <div className="flex flex-col md:flex-row gap-8">
-              <div className="flex-1">
-                <span className="text-xs font-semibold text-gray-400">
-                  WHO WE ARE
-                </span>
-                <h2 className="text-[#034552] text-[45px] font-semibold">
-                  Agency Overview
-                </h2>
-                <p className="text-[#034552] text-[18px] font-semibold">
-                  At bimouse.agency, we transform your data into powerful
-                  insights using Power BI, Excel, and Tableau. Our team designs
-                  interactive, visually striking dashboards that simplify
-                  decision-making.
-                </p>
-                <button className="bg-teal-700 text-white px-5 py-2 rounded-lg font-semibold hover:bg-teal-600 transition w-max">
-                  DISCOVER MORE
-                </button>
+      {/* AGENCY OVERVIEW (full-bleed bg, content aligned to NAV_CONTAINER) */}
+      <section
+        className="w-full"
+        style={{
+          backgroundImage: `url(${banner})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className={`${NAV_CONTAINER} ${VSPACE}`}>
+          <div className="flex flex-col md:flex-row gap-8">
+            <div className="flex-1">
+              <span className="text-xs font-semibold text-gray-400">WHO WE ARE</span>
+              <h2 className="text-[#034552] text-[45px] font-semibold">Agency Overview</h2>
+              <p className="text-[#034552] text-[18px] font-semibold">
+                At bimouse.agency, we transform your data into powerful insights using Power BI, Excel, and Tableau.
+                Our team designs interactive, visually striking dashboards that simplify decision-making.
+              </p>
+              <button className="bg-teal-700 text-white px-5 py-2 rounded-lg font-semibold hover:bg-teal-600 transition w-max">
+                DISCOVER MORE
+              </button>
+            </div>
+
+            <div className="relative flex-1 flex items-center justify-center">
+              <div className="absolute -top-6 left-0 -translate-x-2 bg-[#A5AAFF] text-white font-bold rounded-lg px-5 py-3 text-3xl">
+                5+
               </div>
-              <div className="flex-1 relative flex items-center justify-center">
-                <div className="absolute -top-6 left-1 bg-[#A5AAFF] text-white font-bold rounded-lg px-5 py-3 text-3xl">
-                  5+
-                </div>
-                <img src={cardimg10} alt="cert" />
-              </div>
+              <img src={cardimg10} alt="cert" className="max-w-full h-auto" />
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Core Values (full-bleed bg + gradient overlay) */}
+      {/* CORE VALUES (full-bleed bg + overlay, content aligned to NAV_CONTAINER) */}
+      <section
+        className="relative w-full overflow-hidden"
+        style={{
+          backgroundImage: `url(${cardimg11})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div
-          className="relative w-full overflow-hidden"
+          className="absolute inset-0"
           style={{
-            backgroundImage: `url(${cardimg11})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
+            background:
+              "linear-gradient(90deg,#034753 0%,rgba(21,96,95,0.88) 10%,rgba(21,96,95,0.68) 70%,rgba(21,96,95,0.30) 88%,rgba(21,96,95,0) 100%)",
           }}
-        >
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(90deg,#034753 0%,rgba(21,96,95,0.88) 10%,rgba(21,96,95,0.68) 70%,rgba(21,96,95,0.30) 88%,rgba(21,96,95,0) 100%)",
-            }}
-            aria-hidden="true"
-          />
-          <div className={`${CONTAINER} ${VSPACE} relative`}>
-            <h3 className="text-white text-[25px] font-semibold mb-5">
-              Core Values
-            </h3>
-            <div className="space-y-5 max-w-2xl">
-              <ValueRow
-                icon={cardimg12}
-                title="Innovation"
-                text="We push boundaries to create forward–thinking dashboards and visualizations using Power BI, Tableau, and Excel."
-              />
-              <ValueRow
-                icon={cardimg14}
-                title="Quality"
-                text="Our solutions are built to perform, focusing on accuracy, scalability, and actionable insights."
-              />
-              <ValueRow
-                icon={cardimg13}
-                title="Insight"
-                text="We help businesses leverage data to make smarter decisions and achieve measurable results."
-              />
-            </div>
+          aria-hidden="true"
+        />
+        <div className={`${NAV_CONTAINER} ${VSPACE} relative`}>
+          <h3 className="text-white text-[25px] font-semibold mb-5">Core Values</h3>
+          <div className="space-y-5 max-w-2xl">
+            <ValueRow
+              icon={cardimg12}
+              title="Innovation"
+              text="We push boundaries to create forward–thinking dashboards and visualizations using Power BI, Tableau, and Excel."
+            />
+            <ValueRow
+              icon={cardimg14}
+              title="Quality"
+              text="Our solutions are built to perform, focusing on accuracy, scalability, and actionable insights."
+            />
+            <ValueRow
+              icon={cardimg13}
+              title="Insight"
+              text="We help businesses leverage data to make smarter decisions and achieve measurable results."
+            />
           </div>
         </div>
+      </section>
 
-        {/* Plans */}
-        <div className={`${CONTAINER} ${VSPACE}`}>
+      {/* PLANS */}
+      <section className="bg-white">
+        <div className={`${NAV_CONTAINER} ${VSPACE}`}>
           <div className="mx-auto flex max-w-5xl flex-col gap-8 md:flex-row md:justify-center">
             {plans.map((plan) => (
               <div
                 key={plan.name}
                 className="border-2 border-[#C7F2E9] bg-[#E9FFFB] rounded-xl shadow-md flex flex-col items-center px-8 py-8 hover:scale-[1.01] transition"
-                style={{
-                  ...CARD_DIM,
-                  minWidth: CARD_DIM.width,
-                  minHeight: CARD_DIM.height,
-                }}
+                style={{ ...CARD_DIM, minWidth: CARD_DIM.width, minHeight: CARD_DIM.height }}
               >
                 <div className="flex w-full items-center justify-center">
-                  <div
-                    className="rounded-full"
-                    style={{
-                      width: 52,
-                      height: 52,
-                      background: "#5AB7F7",
-                      marginBottom: 18,
-                      marginTop: 4,
-                    }}
-                  />
+                  <div className="rounded-full" style={{ width: 52, height: 52, background: "#5AB7F7", marginBottom: 18, marginTop: 4 }} />
                 </div>
-                <div className="w-full text-center text-[28px] font-bold mb-2">
-                  {plan.name}
-                </div>
+                <div className="w-full text-center text-[28px] font-bold mb-2">{plan.name}</div>
                 <div className="w-full text-[15px]">
-                  Save up to 10%{" "}
-                  <span className="text-[#10B98A] underline">
-                    with Subscribe to Save?
-                  </span>
+                  Save up to 10% <span className="text-[#10B98A] underline">with Subscribe to Save?</span>
                 </div>
                 <div className="w-full mt-1 text-[16px]">
-                  <span className="font-bold">{plan.title}</span>{" "}
-                  {plan.desc}
+                  <span className="font-bold">{plan.title}</span> {plan.desc}
                 </div>
-                <div className="w-full text-center text-[38px] font-bold mb-4">
-                  {plan.price}
-                </div>
+                <div className="w-full text-center text-[38px] font-bold mb-4">{plan.price}</div>
                 <button className="w-full rounded bg-[#195D6A] py-2 text-[20px] font-bold text-white hover:bg-[#138E89] mb-4">
                   Continue
                 </button>
-                <div className="w-full text-[16px] font-bold mb-2">
-                  • {plan.delivery}
-                </div>
+                <div className="w-full text-[16px] font-bold mb-2">• {plan.delivery}</div>
                 <ul className="ml-3 w-full text-[15px]">
                   {plan.details.map((d, i) => (
                     <li key={i}>– {d}</li>
